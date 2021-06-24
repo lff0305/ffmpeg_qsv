@@ -15,7 +15,7 @@ If you figured out which parameter can be used in `ffmpeg` to select a video ada
 For me, I am doing all the job in `Vmware EXSi` environment, set the `Intel Video Card` to `Hardware Pass Through` to the VM, and set `svga.present=FALSE` for the VM. So the default video adapter (Vmware SVGA Adapter) is disabled and leaving the Interl Adapter as the only one.
 
 # Requirement: 
-- GCC 2.29 +
+- GCC 2.29 + (I compiled ffmpeg, intel QSV and all other dependencies in Ubuntu 20.04, and it is linked with GCC 2.29. So on some other platforms (Like Centos8 which is 2.28) it cannot run.
 - A recent Intel Video Adapter which supports iHD driver
 - root is strongly recommonded when testing, since all the tools needs to open device & call lower intel driver APIs
 
