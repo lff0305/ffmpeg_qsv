@@ -47,7 +47,7 @@ export LIBVA_DRIVER_NAME="iHD"
 # Check before running ffmpeg
 - cd <unzipped directory> and run `./vainfo`
   You should see something like
-  ```
+```
 ./vainfo
 error: XDG_RUNTIME_DIR not set in the environment.
 error: can't connect to X server!
