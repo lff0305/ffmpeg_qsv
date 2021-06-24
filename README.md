@@ -3,7 +3,15 @@ This is a prebuilt ffmpeg with
 - X264
 - X265
 - libmp3lame
-as
+
+Requirement: 
+- GCC 2.29 +
+- A recent Intel Video Adapter which supports iHD driver
+
+My environment:
+- `uname -a` : `Linux linux 5.4.0-74-generic #83-Ubuntu SMP Sat May 8 02:35:39 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux`
+- lspci | grep VGA: `0b:00.0 VGA compatible controller: Intel Corporation UHD Graphics 605 (rev 06)`
+
 ```
 ffmpeg version n4.4 Copyright (c) 2000-2021 the FFmpeg developers
   built with gcc 9 (Ubuntu 9.3.0-17ubuntu1~20.04)
