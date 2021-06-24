@@ -8,9 +8,11 @@
 
 # Known issues
 
-For a machine with multiple adapters, I have not figured out how to let ffmpeg call the specific intel video card. For intel provided tools (vainfo, sample_encode, etc) they have an option like `--device /dev/dri/card<n>` to select the intel card.
+For a machine with *multiple* adapters, I have not figured out how to let ffmpeg call the specific intel video card. For intel provided tools (vainfo, sample_encode, etc) they have an option like `--device /dev/dri/card<n>` to select the intel card.
 
-If you figured out which parameter can be used in `ffmpeg` to select a video adapter, please let me know (Or create a ticket)
+If you figured out which parameter can be used in `ffmpeg` to select a video adapter, please let me know (Or create a ticket).
+
+For me, I am doing all the job in `Vmware EXSi` environment, set the `Intel Video Card` to `Hardware Pass Through` to the VM, and set `svga.present=FALSE` for the VM. So the default video adapter (Vmware SVGA Adapter) is disabled and leaving the Interl Adapter as the only one.
 
 # Requirement: 
 - GCC 2.29 +
