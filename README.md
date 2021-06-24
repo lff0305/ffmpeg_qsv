@@ -11,10 +11,10 @@
 # My environment (On Ubuntu 20.04 LTS):
 - `uname -a` : `Linux linux 5.4.0-74-generic #83-Ubuntu SMP Sat May 8 02:35:39 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux`
 - lspci | grep VGA: `0b:00.0 VGA compatible controller: Intel Corporation UHD Graphics 605 (rev 06)`
-```
+
 
 # ffmpeg info:
-
+```
 ffmpeg version n4.4 Copyright (c) 2000-2021 the FFmpeg developers
   built with gcc 9 (Ubuntu 9.3.0-17ubuntu1~20.04)
   configuration: --enable-gpl --disable-shared --enable-libmp3lame --enable-libx264 --enable-libx265 --disable-x86asm --disable-lzma --enable-pic --extra-cflags=-fPIC --extra-cxxflags=-fPIC --enable-libmfx --enable-nonfree --enable-encoder=h264_qsv --enable-decoder=h264_qsv --enable-encoder=hevc_qsv --enable-decoder=hevc_qsv --prefix=/opt/ffmpeg --libdir=/opt/ffmpeg/lib
