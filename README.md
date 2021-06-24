@@ -116,6 +116,41 @@ Decoding started
 ^Came number:   31, fps: 8.734, fread_fps: 0.000, fwrite_fps: 8.928
 ```
 
+# Check Intel encoding sample tool is good (root required !!)
+```
+./sample_encode h264 -i /tmp/output.yuv -o /tmp/1.h264 -w 1920 -h 1080 -vaapi
+libva info: VA-API version 1.11.0
+libva info: User environment variable requested driver 'iHD'
+libva info: Trying to open /home/lff/ffmpeg_qsv//iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_11
+libva info: va_openDriver() returns 0
+Encoding Sample Version 8.4.27.0
+
+Input file format       YUV420
+Output video            AVC 
+Source picture:
+        Resolution      1920x1088
+        Crop X,Y,W,H    0,0,1920,1080
+Destination picture:
+        Resolution      1920x1088
+        Crop X,Y,W,H    0,0,1920,1080
+Frame rate      30.00
+Bit rate(Kbps)  3757
+Gop size        256
+Ref dist        4
+Ref number      3
+Idr Interval    0
+Target usage    balanced
+Memory type     vaapi
+Media SDK impl          hw
+Media SDK version       1.35
+
+Processing started
+Frame number: 31
+Encoding fps: 83
+
+Processing finished
+```
 
 # FAQs
 1. What to do if I have multiple video adapters ?
