@@ -1,3 +1,5 @@
+# Prebuilt files: https://app.box.com/s/1esr0au5hikxbunuuxqeb5aw8ql7w28h
+
 # This is a prebuilt ffmpeg with
 - Intel QSV
 - X264
@@ -189,5 +191,14 @@ video:7339kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing 
 
 # FAQs
 1. What to do if I have multiple video adapters ?
+  
    for `vainfo` you can try `./vainfo --display drm --device /dev/dri/<card index>`
    For example, `./vainfo --display drm --device /dev/dri/card1`
+  
+2. How to control the qsv encoder quality ?
+  
+  Thanks to this thread `https://superuser.com/questions/1259059/ffmpeg-h264-qsv-encoder-and-crf-issues`
+  Users can use `-global_quality 10` and `-look_ahead 1` like
+  ```
+  ffmpeg -i in.mp4 -c:v h264_qsv -global_quality 10 -look_ahead 1 out.mp4
+  ```
