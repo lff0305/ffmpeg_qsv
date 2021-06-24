@@ -1,6 +1,6 @@
 # Prebuilt files: https://app.box.com/s/1esr0au5hikxbunuuxqeb5aw8ql7w28h
 
-# This is a prebuilt ffmpeg with
+# This is a prebuilt ffmpeg(n4.4) with
 - Intel QSV
 - X264
 - X265
