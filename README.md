@@ -17,7 +17,10 @@
 ```
 ffmpeg version n4.4 Copyright (c) 2000-2021 the FFmpeg developers
   built with gcc 9 (Ubuntu 9.3.0-17ubuntu1~20.04)
-  configuration: --enable-gpl --disable-shared --enable-libmp3lame --enable-libx264 --enable-libx265 --disable-x86asm --disable-lzma --enable-pic --extra-cflags=-fPIC --extra-cxxflags=-fPIC --enable-libmfx --enable-nonfree --enable-encoder=h264_qsv --enable-decoder=h264_qsv --enable-encoder=hevc_qsv --enable-decoder=hevc_qsv --prefix=/opt/ffmpeg --libdir=/opt/ffmpeg/lib
+  configuration: --enable-gpl --disable-shared --enable-libmp3lame --enable-libx264 --enable-libx265
+                 --disable-x86asm --disable-lzma --enable-pic --extra-cflags=-fPIC --extra-cxxflags=-fPIC
+                 --enable-libmfx --enable-nonfree --enable-encoder=h264_qsv --enable-decoder=h264_qsv 
+                 --enable-encoder=hevc_qsv --enable-decoder=hevc_qsv --prefix=/opt/ffmpeg --libdir=/opt/ffmpeg/lib
   libavutil      56. 70.100 / 56. 70.100
   libavcodec     58.134.100 / 58.134.100
   libavformat    58. 76.100 / 58. 76.100
@@ -31,3 +34,58 @@ usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfi
 
 Use -h to get full help or, even better, run 'man ffmpeg'
 ```
+
+# Usage
+
+Unzip and create the following `ENV` :
+```
+export LD_LIBRARY_PATH="<the unzipped directory, which contains ffmpeg binary>"
+export LIBVA_DRIVERS_PATH="<the unzipped directory, which contains ffmpeg binary>"
+export LIBVA_DRIVER_NAME="iHD"
+```
+
+# Check before running ffmpeg
+- cd <unzipped directory> and run `./vainfo`
+  You should see something like
+  ```
+./vainfo
+error: XDG_RUNTIME_DIR not set in the environment.
+error: can't connect to X server!
+libva info: VA-API version 1.11.0
+libva info: User environment variable requested driver 'iHD'
+libva info: Trying to open /home/lff/ffmpeg_qsv/iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_11
+libva info: va_openDriver() returns 0
+vainfo: VA-API version: 1.11 (libva 2.11.0)
+vainfo: Driver version: Intel iHD driver for Intel(R) Gen Graphics - 21.1.3 (bec8e138)
+vainfo: Supported profile and entrypoints
+      VAProfileNone                   : VAEntrypointVideoProc
+      VAProfileNone                   : VAEntrypointStats
+      VAProfileMPEG2Simple            : VAEntrypointVLD
+      VAProfileMPEG2Main              : VAEntrypointVLD
+      VAProfileH264Main               : VAEntrypointVLD
+      VAProfileH264Main               : VAEntrypointEncSlice
+      VAProfileH264Main               : VAEntrypointFEI
+      VAProfileH264Main               : VAEntrypointEncSliceLP
+      VAProfileH264High               : VAEntrypointVLD
+      VAProfileH264High               : VAEntrypointEncSlice
+      VAProfileH264High               : VAEntrypointFEI
+      VAProfileH264High               : VAEntrypointEncSliceLP
+      VAProfileVC1Simple              : VAEntrypointVLD
+      VAProfileVC1Main                : VAEntrypointVLD
+      VAProfileVC1Advanced            : VAEntrypointVLD
+      VAProfileJPEGBaseline           : VAEntrypointVLD
+      VAProfileJPEGBaseline           : VAEntrypointEncPicture
+      VAProfileH264ConstrainedBaseline: VAEntrypointVLD
+      VAProfileH264ConstrainedBaseline: VAEntrypointEncSlice
+      VAProfileH264ConstrainedBaseline: VAEntrypointFEI
+      VAProfileH264ConstrainedBaseline: VAEntrypointEncSliceLP
+      VAProfileVP8Version0_3          : VAEntrypointVLD
+      VAProfileHEVCMain               : VAEntrypointVLD
+      VAProfileHEVCMain               : VAEntrypointEncSlice
+      VAProfileHEVCMain               : VAEntrypointFEI
+      VAProfileHEVCMain10             : VAEntrypointVLD
+      VAProfileHEVCMain10             : VAEntrypointEncSlice
+      VAProfileVP9Profile0            : VAEntrypointVLD
+      VAProfileVP9Profile2            : VAEntrypointVLD
+  ```
