@@ -89,6 +89,33 @@ vainfo: Supported profile and entrypoints
       VAProfileVP9Profile0            : VAEntrypointVLD
       VAProfileVP9Profile2            : VAEntrypointVLD
   ```
+# Check Intel decoding sample tool is good (root required !!)
+```
+ ./sample_decode h264 -i sample_outdoor_car_1080p_10fps.h264 -o /tmp/output.yuv -vaapi
+libva info: VA-API version 1.11.0
+libva info: User environment variable requested driver 'iHD'
+libva info: Trying to open /home/lff/ffmpeg_qsv//iHD_drv_video.so
+libva info: Found init function __vaDriverInit_1_11
+libva info: va_openDriver() returns 0
+Decoding Sample Version 8.4.27.0
+
+
+Input video     AVC 
+Output format   NV12
+Input:
+  Resolution    1920x1088
+  Crop X,Y,W,H  0,0,1920,1080
+Output:
+  Resolution    1920x1080
+Frame rate      10.00
+Memory type             vaapi
+MediaSDK impl           hw
+MediaSDK version        1.35
+
+Decoding started
+^Came number:   31, fps: 8.734, fread_fps: 0.000, fwrite_fps: 8.928
+```
+
 
 # FAQs
 1. What to do if I have multiple video adapters ?
