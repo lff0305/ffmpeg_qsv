@@ -7,6 +7,7 @@
 # Requirement: 
 - GCC 2.29 +
 - A recent Intel Video Adapter which supports iHD driver
+- root is strongly recommonded when testing, since all the tools needs to open device & call lower intel driver APIs
 
 # My environment (On Ubuntu 20.04 LTS):
 - `uname -a` : `Linux linux 5.4.0-74-generic #83-Ubuntu SMP Sat May 8 02:35:39 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux`
@@ -151,6 +152,40 @@ Encoding fps: 83
 
 Processing finished
 ```
+
+# Run ffmpeg to encoding the sample video
+
+```
+ ./ffmpeg -i sample_outdoor_car_1080p_10fps.h264 -vcodec h264_qsv -acodec libmp3lame /tmp/1.mp4
+ffmpeg version n4.4 Copyright (c) 2000-2021 the FFmpeg developers
+  built with gcc 9 (Ubuntu 9.3.0-17ubuntu1~20.04)
+  configuration: --enable-gpl --disable-shared --enable-libmp3lame --enable-libx264 --enable-libx265 --disable-x86asm --disable-lzma --enable-pic --extra-cflags=-fPIC --extra-cxxflags=-fPIC --enable-libmfx --enable-nonfree --enable-encoder=h264_qsv --enable-decoder=h264_qsv --enable-encoder=hevc_qsv --enable-decoder=hevc_qsv --prefix=/opt/ffmpeg --libdir=/opt/ffmpeg/lib
+  libavutil      56. 70.100 / 56. 70.100
+  libavcodec     58.134.100 / 58.134.100
+  libavformat    58. 76.100 / 58. 76.100
+  libavdevice    58. 13.100 / 58. 13.100
+  libavfilter     7.110.100 /  7.110.100
+  libswscale      5.  9.100 /  5.  9.100
+  libswresample   3.  9.100 /  3.  9.100
+  libpostproc    55.  9.100 / 55.  9.100
+Input #0, h264, from 'sample_outdoor_car_1080p_10fps.h264':
+  Duration: N/A, bitrate: N/A
+  Stream #0:0: Video: h264 (High), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 10 fps, 10 tbr, 1200k tbn, 20 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> h264 (h264_qsv))
+Press [q] to stop, [?] for help
+Output #0, mp4, to '/tmp/1.mp4':
+  Metadata:
+    encoder         : Lavf58.76.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), nv12(tv, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 1000 kb/s, 10 fps, 10240 tbn
+    Metadata:
+      encoder         : Lavc58.134.100 h264_qsv
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/1000000 buffer size: 0 vbv_delay: N/A
+frame=  600 fps= 39 q=30.0 Lsize=    7348kB time=00:00:59.70 bitrate=1008.2kbits/s speed=3.92x    
+video:7339kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.116950%
+```
+
 
 # FAQs
 1. What to do if I have multiple video adapters ?
