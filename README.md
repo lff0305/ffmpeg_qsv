@@ -48,7 +48,7 @@ Use -h to get full help or, even better, run 'man ffmpeg'
 
 # Usage
 
-Unzip and create the following `ENV` :
+Download the `.tar.gz` file, decompress it, and create the following `ENV` :
 ```
 export LD_LIBRARY_PATH="<the unzipped directory, which contains ffmpeg binary>"
 export LIBVA_DRIVERS_PATH="<the unzipped directory, which contains ffmpeg binary>"
