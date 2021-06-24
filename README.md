@@ -89,3 +89,8 @@ vainfo: Supported profile and entrypoints
       VAProfileVP9Profile0            : VAEntrypointVLD
       VAProfileVP9Profile2            : VAEntrypointVLD
   ```
+
+# FAQs
+1. What to do if I have multiple video adapters ?
+   for `vainfo` you can try `./vainfo --display drm --device /dev/dri/<card index>`
+   For example, `./vainfo --display drm --device /dev/dri/card1`
