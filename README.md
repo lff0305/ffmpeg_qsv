@@ -206,7 +206,8 @@ video:7339kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing 
 2. How to control the qsv encoder quality ?
   
   Thanks to this thread `https://superuser.com/questions/1259059/ffmpeg-h264-qsv-encoder-and-crf-issues`
-  Users can use `-global_quality 10` and `-look_ahead 1` like
+  Users can use `-global_quality and `-look_ahead` like
   ```
   ffmpeg -i in.mp4 -c:v h264_qsv -global_quality 10 -look_ahead 1 out.mp4
   ```
+  In my test, a quality `32` is good enough for general usage. It can be set between 1 (Best but biggest size) to 51 (Worse, smallest size)
