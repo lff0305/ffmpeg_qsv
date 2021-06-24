@@ -6,6 +6,12 @@
 - X265
 - libmp3lame
 
+# Known issues
+
+For a machine with multiple adapters, I have not figured out how to let ffmpeg call the specific intel video card. For intel provided tools (vainfo, sample_encode, etc) they have an option like `--device /dev/dri/card<n>` to select the intel card.
+
+If you figured out which parameter can be used in `ffmpeg` to select a video adapter, please let me know (Or create a ticket)
+
 # Requirement: 
 - GCC 2.29 +
 - A recent Intel Video Adapter which supports iHD driver
