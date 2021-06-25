@@ -213,7 +213,7 @@ video:7339kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing 
     In my test, a quality `32` is good enough for general usage. It can be set between 1 (Best but biggest size) to 51 (Worse, smallest size)
     
 # Performance
-    On my J4215 machine, and tested with the sample video,
+    On my J4125 machine, and tested with the sample video,
     
     x264: about 15 frames per second
     h264_qsv: about 40~50 frames per second
