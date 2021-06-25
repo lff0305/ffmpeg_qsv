@@ -211,3 +211,9 @@ video:7339kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing 
     ffmpeg -i in.mp4 -c:v h264_qsv -global_quality 10 -look_ahead 1 out.mp4
     ```
     In my test, a quality `32` is good enough for general usage. It can be set between 1 (Best but biggest size) to 51 (Worse, smallest size)
+    
+# Performance
+    On my J4215 machine, and tested with the sample video,
+    
+    x264: about 15 frames per second
+    h264_qsv: about 40~50 frames per second
