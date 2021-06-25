@@ -15,7 +15,7 @@ If you figured out which parameter can be used in `ffmpeg` to select a video ada
 For me, I am doing all the jobs in `Vmware ESXi` environment, set the `Intel Video Card` to `Hardware Pass Through` to the VM, and set `svga.present=FALSE` to disable the default video adapter. So, the intel video adapter will be the only one. But as a result, you will not be able to use the `VM Console` in ESXi Web Console. You have to use a SSH terminal.
 
 # Requirement: 
-- GlibC 2.29 + (I compiled `ffmpeg`, `intel mediasdk`, `intel media driver` and all other dependencies in Ubuntu 20.04, and it is linked with GlibC 2.29. So on some other platforms (Like Centos8 which is 2.28) it cannot run. :disappointed:
+- `GlibC 2.29+` (I compiled `ffmpeg`, `intel mediasdk`, `intel media driver` and all other dependencies in `Ubuntu 20.04`, and it is linked with `GlibC 2.29`. So on some other platforms (Like Centos8 which is 2.28) it cannot run due to the required `Glibc 2.29` cannot be found. :disappointed:
 - A recent Intel Video Adapter which supports iHD driver
 - root is strongly recommonded when testing, since all the tools needs to open device & call lower intel driver APIs
 
