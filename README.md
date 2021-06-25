@@ -21,8 +21,10 @@ For me, I am doing all the jobs in `Vmware ESXi` environment, set the `Intel Vid
 
 # My environment (On Ubuntu 20.04 LTS):
 - `uname -a` 
+
     `Linux linux 5.4.0-74-generic #83-Ubuntu SMP Sat May 8 02:35:39 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux`
 - `lspci | grep VGA`
+
     `0b:00.0 VGA compatible controller: Intel Corporation UHD Graphics 605 (rev 06)`
 
 
