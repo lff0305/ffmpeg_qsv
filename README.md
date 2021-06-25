@@ -56,7 +56,7 @@ export LIBVA_DRIVER_NAME="iHD"
 ```
 
 # Check before running ffmpeg
-- cd <unzipped directory> and run `./vainfo`
+`cd <unzipped directory>` and run `./vainfo`
   You should see something like
 ```
 ./vainfo
