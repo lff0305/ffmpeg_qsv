@@ -200,14 +200,14 @@ video:7339kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing 
 # FAQs
 1. What to do if I have multiple video adapters ?
   
-   for `vainfo` you can try `./vainfo --display drm --device /dev/dri/<card index>`
-   For example, `./vainfo --display drm --device /dev/dri/card1`
+    for `vainfo` you can try `./vainfo --display drm --device /dev/dri/<card index>`
+    For example, `./vainfo --display drm --device /dev/dri/card1`
   
 2. How to control the qsv encoder quality ?
   
-  Thanks to this thread `https://superuser.com/questions/1259059/ffmpeg-h264-qsv-encoder-and-crf-issues`
-  Users can use `-global_quality and `-look_ahead` like
-  ```
-  ffmpeg -i in.mp4 -c:v h264_qsv -global_quality 10 -look_ahead 1 out.mp4
-  ```
-  In my test, a quality `32` is good enough for general usage. It can be set between 1 (Best but biggest size) to 51 (Worse, smallest size)
+    Thanks to this thread `https://superuser.com/questions/1259059/ffmpeg-h264-qsv-encoder-and-crf-issues`
+    Users can use `-global_quality and `-look_ahead` like
+    ```
+    ffmpeg -i in.mp4 -c:v h264_qsv -global_quality 10 -look_ahead 1 out.mp4
+    ```
+    In my test, a quality `32` is good enough for general usage. It can be set between 1 (Best but biggest size) to 51 (Worse, smallest size)
