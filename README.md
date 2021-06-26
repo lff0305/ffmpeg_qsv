@@ -216,6 +216,7 @@ video:7339kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing 
     ```
     In my test, a quality `32` is good enough for general usage. It can be set between 1 (Best but biggest size) to 51 (Worse, smallest size)
     
+    And users can also refer to this doc: http://underpop.online.fr/f/ffmpeg/help/qsv-encoders.htm.gz
 # Performance
     On my J4125 machine, and tested with the sample video,
     
