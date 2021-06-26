@@ -83,7 +83,6 @@ echo "Building fdk-aac done"
 echo "Building mediasdk"
 cd MediaSDK-intel-mediasdk-21.1.3/
 export PKG_CONFIG_PATH=/opt/intel/libva/lib/pkgconfig
-cd MediaSDK
 mkdir build && cd build
 cmake ..
 make
