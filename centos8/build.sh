@@ -2,6 +2,7 @@
 set -e
 echo "Running yum to install needed tools and libraries"
 yum install -y git bzip2 gcc gcc-c++ libdrm libdrm-devel autoconf automake libtool
+yum update -y libarchive
 echo "yum jobs done."
 
 echo "Getting sources from github.com..."
