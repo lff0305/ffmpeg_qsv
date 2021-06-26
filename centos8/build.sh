@@ -1,5 +1,6 @@
-#!/bin/bash
+#!/bin/bash	
 set -e
+
 echo "Running yum to install needed tools and libraries"
 yum install -y git bzip2 gcc gcc-c++ libdrm libdrm-devel autoconf automake libtool
 yum update -y libarchive
@@ -80,6 +81,18 @@ make install
 cd ..
 echo "Building fdk-aac done"
 
+echo "Downloading mp3lame"
+wget https://telkomuniversity.dl.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz
+tar xf lame-3.100.tar.gz
+cd lame-3.100
+echo "Building mp3lame"
+./configure
+make
+make install
+cd ..
+echo "Building mp3lame done"
+
+
 echo "Building mediasdk"
 cd MediaSDK-intel-mediasdk-21.1.3/
 export PKG_CONFIG_PATH=/opt/intel/libva/lib/pkgconfig
@@ -105,6 +118,7 @@ echo "Building FFMPEG n4.4"
 ./configure --enable-gpl \
               --disable-shared \
 	      --disable-ffprobe \
+	      --enable-libmp3lame \
               --enable-libfdk-aac \
               --disable-x86asm \
               --disable-lzma \
@@ -115,7 +129,7 @@ echo "Building FFMPEG n4.4"
               --enable-nonfree \
               --enable-encoder=h264_qsv \
               --enable-decoder=h264_qsv \
-	      --enable-encoder=hevc_qsv \
+              --enable-encoder=hevc_qsv \
               --enable-decoder=hevc_qsv \
               --prefix=/opt/ffmpeg \
               --libdir=/opt/ffmpeg/lib
