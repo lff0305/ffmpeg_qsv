@@ -102,7 +102,7 @@ echo "Building FFMPEG n4.4"
 
 ./configure --enable-gpl \
               --disable-shared \
-			  --disable-ffprobe \
+	      --disable-ffprobe \
               --enable-libfdk-aac \
               --disable-x86asm \
               --disable-lzma \
@@ -113,7 +113,7 @@ echo "Building FFMPEG n4.4"
               --enable-nonfree \
               --enable-encoder=h264_qsv \
               --enable-decoder=h264_qsv \
-			  --enable-encoder=hevc_qsv \
+	      --enable-encoder=hevc_qsv \
               --enable-decoder=hevc_qsv \
               --prefix=/opt/ffmpeg \
               --libdir=/opt/ffmpeg/lib
