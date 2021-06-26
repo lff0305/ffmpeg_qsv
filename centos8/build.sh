@@ -1,3 +1,5 @@
+#!/bin/bash
+set -e
 echo "Running yum to install needed tools and libraries"
 yum install -y git bzip2 gcc gcc-c++ libdrm libdrm-devel autoconf automake libtool
 echo "yum jobs done."
