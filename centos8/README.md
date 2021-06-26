@@ -1,11 +1,12 @@
-#Requirement
+# Requirement
 
 `Centos8` with `root` permission.
-#Usage
+# Usage
 
 download `build.sh` to a new directory, run
 ```
 chmod +x build.sh
 ./build.sh
 ```
-to install required tools (gcc, make, etc) and libraries, build dependencies and ffmpeg.
+to install required tools (`gcc`, `make`, etc) and libraries, build dependencies and `ffmpeg`.
+The `ffmpeg` will be placed at `/opt/ffmpeg/bin`.
