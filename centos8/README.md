@@ -15,10 +15,13 @@ See https://github.com/Intel-Media-SDK/MediaSDK/releases/tag/intel-mediasdk-21.1
 
 # Usage
 
-download `build.sh` to a new directory, run
+download `build.sh` to a new directory, run with `root`
 ```
-chmod +x build.sh
-./build.sh
+# mkdir build
+# cd build
+# /// download and put build.sh here
+# chmod +x build.sh
+# ./build.sh
 ```
 to install required tools (`gcc`, `make`, etc) and libraries, build dependencies and `ffmpeg`.
 The `ffmpeg` will be placed at `/opt/ffmpeg/bin`.
