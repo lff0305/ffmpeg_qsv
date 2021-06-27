@@ -12,7 +12,7 @@ For a machine with **multiple** adapters, I have **not** figured out how to let 
 
 If you figured out which parameter can be used in `ffmpeg` to select a video adapter, please let me know (Or create a ticket).
 
-**Update**: Users with multiple adapters can try this parameter: `-vaapi_device /dev/dri/<card n>`, like `-vaapi_device /dev/dri/card0` or `-vaapi_device /dev/dri/card1`
+**Update**: Users with multiple adapters can try `-vaapi_device /dev/dri/<card n>`, like `-vaapi_device /dev/dri/card0` or `-vaapi_device /dev/dri/card1`
 
 For me, I am doing all the jobs in `Vmware ESXi` environment, set the `Intel Video Card` to `Hardware Pass Through` to the VM, and set `svga.present=FALSE` to disable the default video adapter. So, the intel video adapter will be the only one. But as a result, you will not be able to use the `VM Console` in ESXi Web Console. You have to use a SSH terminal.
 
