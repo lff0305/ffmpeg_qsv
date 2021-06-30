@@ -2,6 +2,10 @@
 
 `Centos8` with `root` permission.
 
+# Why not Centos7
+
+Some dependent libraries require `Kernel 4+`. So there may be some issues on Centos7.
+
 # Version
 
 This script is based on:
