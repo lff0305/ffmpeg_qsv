@@ -22,6 +22,9 @@ For me, I am doing all the jobs in `Vmware ESXi` environment, set the `Intel Vid
 
 # Requirement: 
 - `GlibC 2.29+` (I compiled `ffmpeg`, `intel mediasdk`, `intel media driver` and all other dependencies in `Ubuntu 20.04`, and it is linked with `GlibC 2.29`. So on some other platforms (Like Centos8 which is 2.28) it cannot run due to the required `Glibc 2.29` cannot be found. :disappointed:
+
+    For Centos8 please refer to https://github.com/lff0305/ffmpeg_qsv/tree/main/centos8
+
 - A recent Intel Video Adapter which supports iHD driver
 - root is strongly recommonded when testing, since all the tools needs to open device & call lower intel driver APIs
 
